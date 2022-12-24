@@ -25,15 +25,15 @@
 				<tbody>
 					<tr>
 						<td><label>First name:</label></td>
-						<td><form:input path="firstName" /></td>
+						<td><form:input path="firstName" /><form:errors path="firstName" id="error"/></td>
 					</tr>
 					<tr>
 						<td><label>Last name:</label></td>
-						<td><form:input path="lastName" /></td>
+						<td><form:input path="lastName" /><form:errors path="lastName" id="error"/></td>
 					</tr>
 					<tr>
 						<td><label>Email:</label></td>
-						<td><form:input path="email" /></td>
+						<td><form:input path="email" /><form:errors path="email" id="error"/></td>
 					</tr>
 					<tr>
 						<td><label></label></td>
