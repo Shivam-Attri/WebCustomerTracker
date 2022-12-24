@@ -6,6 +6,6 @@ import com.customertracker.entity.Customer;
 
 public interface CustomerDAO {
 	
-	public List<Customer> getCustomers();
-	
+	List<Customer> getCustomers();
+	void saveCustomer(Customer customer);
 }

@@ -13,9 +13,9 @@
 			<h2>Customer Relationship Management</h2>
 		</div>
 	</div>
-	
 	<div id="container">
 		<div id="content">
+			<button onclick="window.location.href='showFormForAdd';return false;" class="add-button">Add Customer</button>
 			<table>
 				<tr>
 					<th>First Name</th>
