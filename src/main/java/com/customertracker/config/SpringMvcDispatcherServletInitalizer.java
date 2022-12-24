@@ -2,7 +2,7 @@ package com.customertracker.config;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
-public class SpringMvcDispatcherServletInitlizer extends AbstractAnnotationConfigDispatcherServletInitializer{
+public class SpringMvcDispatcherServletInitalizer extends AbstractAnnotationConfigDispatcherServletInitializer{
 
 	@Override
 	protected Class<?>[] getRootConfigClasses() {
