@@ -57,6 +57,12 @@ public class CustomerController {
 		return "customer-form";
 	}
 	
+	@PostMapping("/deleteCustomer")
+	public String deleteCustomer(@RequestParam("customerId")int customerId) {
+		customerService.deleteCustomer(customerId);
+		return "redirect:/customer/list";
+	}
+	
 	@InitBinder
 	public void initBinder(WebDataBinder dataBinder) {
 		StringTrimmerEditor stringTrimmerEditor=new StringTrimmerEditor(true);

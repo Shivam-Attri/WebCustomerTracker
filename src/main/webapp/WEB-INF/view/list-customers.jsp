@@ -34,6 +34,11 @@
 								<input type="hidden" value="${tempCustomer.id}" name="customerId">
 								<button type="submit">Update</button>
 							</form>
+							<form action="${pageContext.request.contextPath}/customer/deleteCustomer" method="POST">
+								<input type="hidden" value="${tempCustomer.id}" name="customerId">
+								<button type="submit" onclick="if(!(confirm('are you want to delete customer?'))) return false">Delete</button>
+							</form>
+							
 						</td>
 					</tr>
 				</c:forEach>
