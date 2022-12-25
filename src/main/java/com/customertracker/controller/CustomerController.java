@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.customertracker.entity.Customer;
 import com.customertracker.service.CustomerService;
@@ -45,8 +46,15 @@ public class CustomerController {
 		if(bindingResult.hasErrors()) {
 			return "customer-form";
 		}
-		customerService.saveCustomer(customer);
+		customerService.saveOrUpdateCustomer(customer);
 		return "redirect:/customer/list";
+	}
+	
+	@PostMapping("/updateCustomer")
+	public String updateCustomer(@RequestParam("customerId")int customerId,Model model) {
+		Customer customer=customerService.getCustomer(customerId);
+		model.addAttribute(customer);
+		return "customer-form";
 	}
 	
 	@InitBinder

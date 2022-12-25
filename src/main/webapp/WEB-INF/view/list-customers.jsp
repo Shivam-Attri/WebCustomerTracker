@@ -21,12 +21,20 @@
 					<th>First Name</th>
 					<th>Last  Name</th>
 					<th>Email</th>
+					<th>Action</th>
+					
 				</tr>
 				<c:forEach var="tempCustomer" items="${customers}">
 					<tr>
 						<td>${tempCustomer.firstName}</td>
 						<td>${tempCustomer.lastName}</td>
 						<td>${tempCustomer.email}</td>
+						<td>
+							<form action="${pageContext.request.contextPath}/customer/updateCustomer" method="POST">
+								<input type="hidden" value="${tempCustomer.id}" name="customerId">
+								<button type="submit">Update</button>
+							</form>
+						</td>
 					</tr>
 				</c:forEach>
 			</table>
