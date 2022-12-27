@@ -10,4 +10,5 @@ public interface CustomerService {
 	Customer getCustomer(int customerId);
 	void saveOrUpdateCustomer(Customer customer);
 	void deleteCustomer(int customerId);
+	List<Customer> searchCustomer(String searchText);
 }

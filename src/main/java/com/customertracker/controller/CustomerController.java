@@ -63,9 +63,16 @@ public class CustomerController {
 		return "redirect:/customer/list";
 	}
 	
+	@GetMapping("/searchCustomers")
+	public String searchCustomers(@RequestParam("searchText")String searchText,Model model) {
+		List<Customer> customers=customerService.searchCustomer(searchText);
+		model.addAttribute("customers", customers);
+		return "list-customers";
+	}
+		
 	@InitBinder
 	public void initBinder(WebDataBinder dataBinder) {
-		StringTrimmerEditor stringTrimmerEditor=new StringTrimmerEditor(true);
+		StringTrimmerEditor stringTrimmerEditor=new StringTrimmerEditor(false);
 		dataBinder.registerCustomEditor(String.class, stringTrimmerEditor);
 	}
 }

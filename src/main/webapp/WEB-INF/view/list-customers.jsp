@@ -16,6 +16,11 @@
 	<div id="container">
 		<div id="content">
 			<button onclick="window.location.href='showFormForAdd';return false;" class="add-button">Add Customer</button>
+			<form action="${pageContext.request.contextPath}/customer/searchCustomers" method="GET">
+				<a>Search Customer:</a>
+				<input type="text" name="searchText">
+				<button type="submit">Search</button>
+			</form>
 			<table>
 				<tr>
 					<th>First Name</th>
