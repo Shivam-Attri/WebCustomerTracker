@@ -62,8 +62,9 @@
 					</tr>
 				</c:forEach>
 			</table>
-			
 		</div>
 	</div>
+	<button class="btn btn-dark text-white" onclick="window.location.href='list';return false;" class="add-button">Back to list</button>
+	
 </body>
 </html>

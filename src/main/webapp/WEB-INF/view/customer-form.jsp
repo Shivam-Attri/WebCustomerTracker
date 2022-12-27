@@ -40,7 +40,7 @@
 		<div style="clear; both;"></div>
 	 </div>
 	</div>
-	<p class="btn btn-dark"><a href="${pageContext.request.contextPath}/customer/list">Back to List</a></p>
+	<button class="btn btn-dark text-white" onclick="window.location.href='list';return false;" class="add-button">Back to list</button>
 </body>
 </html>
 
