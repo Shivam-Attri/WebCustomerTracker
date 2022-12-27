@@ -30,7 +30,7 @@ public class Customer {
 	@Column(name="last_name")
 	String lastName;
 	
-	@Email
+	@Email(message = "Invalid Email")
 	@NotNull(message="is required")
 	@Size(min=1 , message="is required")
 	@Column(name="email")
