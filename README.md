@@ -22,3 +22,10 @@
 <li>Java Servlet Pages</li>
 <li>Maven</li>
 <ul>
+
+<h3>Requirements to run this project:- Java11 , Tomcat-9.x , Mysql Database</h3>
+
+Steps to run this project:->
+1. Install MySql Database and run Sql Scripts present in "sql scripts" directiory
+2. Create War file for the project
+3. Deploy War file in Tomcat 9.x
