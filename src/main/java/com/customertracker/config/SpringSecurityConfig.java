@@ -24,12 +24,19 @@ public class SpringSecurityConfig {
 	    @Bean
 	    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 	    	return http.authorizeRequests(configurer->configurer
-	    												.anyRequest()
-	    												.authenticated())
-	    				.formLogin(configurer->configurer
-	    												.loginPage("/login")
-	    												.loginProcessingUrl("/login")
-	    												.permitAll())
+	    												.antMatchers("/css/**").permitAll()
+	    												.anyRequest().authenticated())
+	    				.formLogin(configurer->{
+							try {
+																configurer
+																.loginPage("/login")
+																.loginProcessingUrl("/login").permitAll()
+																.and()
+																.logout().permitAll();
+							} catch (Exception e) {
+								e.printStackTrace();
+							}
+						})
 	    				.build();
 	    }
 }

@@ -1,14 +1,9 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Save Customer</title>
-	<link type="text/css"
-		  rel="stylesheet"
-		  href="${pageContext.request.contextPath}/resources/css/style.css">
-	<link type="text/css"
-		  rel="stylesheet"
-		  href="${pageContext.request.contextPath}/resources/css/add-customer-style.css">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
@@ -16,6 +11,21 @@
 	<div class="card p-2 bg-dark text-white text-center">
 	    <div class="card-body"><h1>Customer Relationship Management</h1></div>
 	</div>
+		<nav class="navbar navbar-expand-sm">
+	  <div class="container-fluid row">
+	    <ul class="navbar-nav">
+	      <li class="nav-item ">
+	       <div class="nav-link input-group mb-3" >
+	        <form:form action="${pageContext.request.contextPath}/logout" method="POST">
+				<div>
+					<button type="submit" class="btn btn-dark">Logout</button>
+				</div>
+			</form:form>
+		   </div>
+	      </li>
+	    </ul>
+	  </div>
+    </nav>
 	
 	
 	<div class="container mt-3 card bg-dark text-white text-center" style="width:800px">

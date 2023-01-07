@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,6 +32,15 @@
 			</form>
 		   </div>
 	      </li>
+	      <li class="nav-item ">
+	       <div class="nav-link">
+	        <form:form action="${pageContext.request.contextPath}/logout" method="POST">
+				<div>
+					<button type="submit" class="btn btn-dark">Logout</button>
+				</div>
+			</form:form>
+		   </div>
+	      </li>
 	    </ul>
 	  </div>
     </nav>
@@ -49,14 +59,14 @@
 						<td>${tempCustomer.lastName}</td>
 						<td>${tempCustomer.email}</td>
 						<td>
-							<form action="${pageContext.request.contextPath}/customer/updateCustomer" method="POST">
+							<form:form action="${pageContext.request.contextPath}/customer/updateCustomer" method="POST">
 								<input type="hidden" value="${tempCustomer.id}" name="customerId">
 								<button type="submit" class="btn btn-secondary btn-outline-dark btn-sm">Update</button>
-							</form>
-							<form action="${pageContext.request.contextPath}/customer/deleteCustomer" method="POST">
+							</form:form>
+							<form:form action="${pageContext.request.contextPath}/customer/deleteCustomer" method="POST">
 								<input type="hidden" value="${tempCustomer.id}" name="customerId">
 								<button type="submit" onclick="if(!(confirm('are you want to delete customer?'))) return false" class="btn btn-secondary btn-outline-dark btn-sm">Delete</button>
-							</form>
+							</form:form>
 							
 						</td>
 					</tr>

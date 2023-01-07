@@ -7,11 +7,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Login</title>
-	<style>
-		.failed {
-			color: red;
-		}
-	</style>
+	<link type="text/css" rel="stylesheet" href="css/login-style.css">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
@@ -28,6 +24,10 @@
 		
 		<c:if  test="${param.error != null}">
 			<i class="failed">You Entered Wrong User-name or Password</i>
+		</c:if>
+		
+		<c:if  test="${param.logout != null}">
+			<i>You have been logged out</i>
 		</c:if>
 		
 		<div class="mb-3 mt-3">
