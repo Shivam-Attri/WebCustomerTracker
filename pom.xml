@@ -17,6 +17,7 @@
     <maven.compiler.source>11</maven.compiler.source>
     <maven.compiler.target>11</maven.compiler.target>
     <org.springframework.version>5.3.24</org.springframework.version>
+    <org.springsecurity.version>5.7.6</org.springsecurity.version>
   </properties>
 
   <dependencies>
@@ -121,13 +122,19 @@
     <dependency>
   		<groupId>org.springframework.security</groupId>
   		<artifactId>spring-security-web</artifactId>
-  		<version>5.7.6</version>
+  		<version>${org.springsecurity.version}</version>
 	</dependency>
 	
 	<dependency>
   		<groupId>org.springframework.security</groupId>
   		<artifactId>spring-security-config</artifactId>
-  		<version>5.7.6</version>
+  		<version>${org.springsecurity.version}</version>
+	</dependency>
+	
+	<dependency>
+   		 <groupId>org.springframework.security</groupId>
+   		 <artifactId>spring-security-taglibs</artifactId>
+   		 <version>${org.springsecurity.version}</version>
 	</dependency>
 
   </dependencies>

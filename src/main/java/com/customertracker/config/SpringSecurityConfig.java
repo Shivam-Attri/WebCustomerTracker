@@ -15,17 +15,22 @@ public class SpringSecurityConfig {
 
 	    @Bean
 	    public InMemoryUserDetailsManager userDetailsManager() {
-	    	UserDetails user1=User.withDefaultPasswordEncoder().username("Shivam").password("Test@123").roles("ADMIN").build();
-	    	UserDetails user2=User.withDefaultPasswordEncoder().username("Attri").password("Testing").roles("EMPLOYEE").build();
-	    	UserDetails user3=User.withDefaultPasswordEncoder().username("Vishu").password("12345").roles("CUSTOMER").build();
-	    	return new InMemoryUserDetailsManager(user1,user2,user3);
+	    	UserDetails user1=User.withDefaultPasswordEncoder().username("Shivam").password("Test@123").roles("ADMIN","USER").build();
+	    	UserDetails user2=User.withDefaultPasswordEncoder().username("Attri").password("Testing").roles("EMPLOYEE","USER").build();
+	    	return new InMemoryUserDetailsManager(user1,user2);
 	    }
 	    
 	    @Bean
 	    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 	    	return http.authorizeRequests(configurer->configurer
 	    												.antMatchers("/css/**").permitAll()
-	    												.anyRequest().authenticated())
+	    												.antMatchers("/customer/list/**").hasAnyRole("USER")
+	    												.antMatchers("/customer/showFormForAdd/**").hasAnyRole("ADMIN")
+	    												.antMatchers("/customer/saveCustomer/**").hasAnyRole("ADMIN")
+	    												.antMatchers("/customer/updateCustomer/**").hasAnyRole("ADMIN")
+	    												.antMatchers("/customer/deleteCustomer/**").hasAnyRole("ADMIN")
+	    												.antMatchers("/customer/searchCustomers/**").hasAnyRole("ADMIN","EMPLOYEE")
+	    												)
 	    				.formLogin(configurer->{
 							try {
 																configurer
