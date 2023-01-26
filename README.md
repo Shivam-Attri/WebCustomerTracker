@@ -8,6 +8,7 @@
 <li>Delete Customers</li>
 <li>Update Customers</li>
 <li>Search Customers</li>
+<li>Login</li>
 </ul>
 
 <h6>Technologies Used</h6>
