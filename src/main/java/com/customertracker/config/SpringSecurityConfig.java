@@ -37,7 +37,9 @@ public class SpringSecurityConfig {
 																.loginPage("/login")
 																.loginProcessingUrl("/login").permitAll()
 																.and()
-																.logout().permitAll();
+																.logout().permitAll()
+																.and()
+																.exceptionHandling().accessDeniedPage("/access-denied");
 							} catch (Exception e) {
 								e.printStackTrace();
 							}
