@@ -2,7 +2,7 @@ USE `customer_tracker`;
 
 CREATE TABLE IF NOT EXISTS `users` (
   `username` varchar(50) NOT NULL,
-  `password` varchar(50) NOT NULL,
+  `password` varchar(68) NOT NULL,
   `enabled` tinyint(1) NOT NULL,
   PRIMARY KEY (`username`)
 );
