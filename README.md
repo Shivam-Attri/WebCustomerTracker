@@ -17,6 +17,8 @@
 <li>Hibernate-ORM</li>
 <li>Java Bean Validation</li>
 <li>Hibernate-Validator</li>
+<li>Spring Security</li>
+<li>Spring AOP</li>
 <li>Tomcat</li>
 <li>MySql</li>
 <li>Java Servlet Pages</li>
